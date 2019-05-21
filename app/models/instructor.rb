@@ -21,7 +21,7 @@ class Instructor
     end
   end
 
-  def fail_student
+  def fail_student(student, test_name)
     test = BoatingTest.all.find{|test|test.student == student && test.test_name}
     if test.class == BoatingTest
       test.test_status = "failed"
